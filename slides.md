@@ -73,7 +73,7 @@ class: middle, center, inverse
 特殊なサイトをより簡単に生成できるタイプの静的サイトジェネレータがある
 
 ---
-# ドメイン特化型 SSG
+# 目的特化型 SSG
 - GitBook
   - 本の静的サイトジェネレータ
 - Slate
@@ -262,3 +262,30 @@ class: middle, center, inverse
 - プロモサイト/コーポレートサイト生成
   - ビルドを個別で組むのではなく型化してしまう
   - マークアッパーが gulpfile をメンテしなくて良くなる
+
+---
+class: middle, center, inverse
+Berber の Initial commit
+# 2017/05/21
+---
+class: middle, center, inverse
+Berber でいい感じに解決された問題数
+# 3
+---
+class: middle, center, inverse
+Berber でいい感じに解決された問題数
+# 1/月
+---
+class: middle, center, inverse
+## Berber で解決される問題がすごくありそうな予感 ✨
+---
+class: middle, center
+# Visualize your data with Berber
+
+---
+class: middle, center
+### お問い合わせは twitter.com/kt3k まで
+
+---
+class: middle, center
+## ご静聴ありがとうございました 👏
