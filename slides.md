@@ -13,13 +13,16 @@ class: middle, center
 class: middle, center
 # Berber is Static Site Generator Generator!
 ---
+class: middle, center
+## 静的サイトジェネレータジェネレータ
+---
 class: middle, center, inverse
-# What?
+# それは何?
 ---
 # Agenda
 - Static Site Generator とは
-- Berber 紹介
-- Berber 応用
+- Berber の紹介
+- Berber の応用
 
 ---
 class: middle, center
@@ -274,14 +277,25 @@ Berber でいい感じに解決された問題数
 ---
 class: middle, center, inverse
 Berber でいい感じに解決された問題数
-# 1/月
+# 1/month
 ---
 class: middle, center, inverse
 ## Berber で解決される問題がすごくありそうな予感 ✨
 ---
 class: middle, center
-# Visualize your data with Berber
-
+# Visualize your data
+# &nbsp;
+# &nbsp;
+---
+class: middle, center
+# Visualize your data
+# Visualize your workflow
+# &nbsp;
+---
+class: middle, center
+# Visualize your data
+# Visualize your workflow
+# With Berber
 ---
 class: middle, center
 ### お問い合わせは twitter.com/kt3k まで
