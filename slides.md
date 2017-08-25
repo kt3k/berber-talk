@@ -42,7 +42,7 @@ class: middle, center
 - **jekyll**
 - **hugo**
 - **haxo**
-- **gatsby**
+- ...
 
 ---
 # 主な Static Site Generator の用途
@@ -58,7 +58,7 @@ class: middle, center, inverse
 
 ---
 class: middle, center, inverse
-middleman, jekyll, hugo などは**汎用**の静的サイトジェネレータ
+middleman, jekyll, hugo などは**汎用**<br />の静的サイトジェネレータ
 
 ---
 class: middle, center, inverse
@@ -92,9 +92,9 @@ class: middle, center, inverse
 
 ---
 # 特殊なサイト生成がしたい例
-- **社内でよく使われている** データ形式をいい感じに静的サイト化したい
-- **社内ルール** で書かれた md をいい感じに静的サイト化したい
-- **個人的に** よく使うデータ形式を Web Page 化したい
+- **社内でよく使われている** **データ形式**をいい感じに静的サイト化したい
+- **社内ルール** で書かれた **md ドキュメント**をいい感じに静的サイト化したい
+- **個人的に** よく使う**データ形式**を Web Page 化したい
 
 ---
 class: middle, center, inverse
@@ -141,12 +141,12 @@ class: middle, center
 ---
 # Berber 概要
 - gulp プラグインの組み合わせで欲しい SSG の**変換**を表現する
-- その変換ルールに基づいて Berber がファイルの読み書き処理を自動で行う
+- その変換ルールに基づいて Berber がファイルの**読み書き/監視/その他処理**を自動で行う
 
 ---
 # Berber 概要
 - gulp プラグインによる変換の過程でプリセットの html / css / js などを挿入することが出来る (gulp プラグインの機能 e.g. gulp-wrap)
-- 任意にデザインや動きを入れることが可能
+  - 任意にデザインや動きを入れることが可能
 
 ---
 class: center
@@ -179,6 +179,8 @@ class: center
 ---
 # Berber 概要 補足
 - なんらかのルールに基づいて **build と watch & serve** が出来れば **SSG** と言って良い
+
+**gulp プラグインと html / js / css で **SSG** を作ったことになる
 
 ---
 class: middle, center, inverse
