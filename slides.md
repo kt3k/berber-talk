@@ -259,8 +259,8 @@ class: middle, center, inverse
 ---
 ## 解決1: domaindoc
 
-- **ドメインモデルの md **から**モデル一覧サイト**を生成する専用 SSG
-- **6 gulp plugin** を使用: gulp-marked, gulp-front-matter, layout1 etc
+- **[ドメインモデルの md](https://github.com/kt3k/moneybit/tree/master/packages/moneybit-domain) **から**[モデル一覧サイト](https://kt3k.github.io/moneybit-app/domaindoc/)**を生成する専用 SSG
+- **6 gulp plugins** を使用: gulp-marked, gulp-front-matter, layout1 etc
 - **必要最小限**の入力で、**詳細な見せ方**と**一覧的な見せ方**の両方ができる
 
 ---
@@ -272,8 +272,8 @@ class: middle, center, inverse
 ## 解決2: langsheet
 
 - JSON ソースを**一覧表**にする SSG
-- **2 gulp plugin** を使用: vinyl-accumulate, layout1
-- 例: [JSON ソース]() / [サイト]()
+- **2 gulp plugins** を使用: vinyl-accumulate, layout1
+- 例: [JSON ソース](https://github.com/kt3k/moneybit-app/tree/master/src/i18n) / [サイト](https://kt3k.github.io/moneybit-app/langsheet/)
 
 ---
 ## 課題3: スライドを md で書きたい
@@ -295,7 +295,7 @@ class: middle, center, inverse
 ## 解決3: remarker
 
 - **md ファイル**から**remark.js 設定済み html**を生成する SSG
-- **2 gulp plugin** を使用: gulp-rename, layout1
+- **2 gulp plugins** を使用: gulp-rename, layout1
 - **このスライドは remarker で出来ています**
 
 ---
