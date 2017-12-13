@@ -4,6 +4,12 @@ class: middle, center, inverse
 ## 日野澤歓也 @kt3k
 
 ---
+# @kt3k
+
+- twitter.com/kt3k
+- github.com/kt3k
+
+---
 class: middle, center
 # JavaScript の<br />静的サイトライブラリ<br />Berber のご紹介
 ---
@@ -20,7 +26,7 @@ class: middle, center, inverse
 # Agenda
 - **Static Site Generator** とは
 - **Berber** の紹介
-- **Berber** の応用
+- **Berber** 応用編
 
 ---
 class: middle, center
@@ -38,17 +44,17 @@ class: middle, center
 
 ---
 # Static Site Generator の例
-- **middleman**
+- **[middleman][]**
 - **jekyll**
 - **hugo**
-- **haxo**
+- **gatsby**
 - ...
 
 ---
 # 主な Static Site Generator の用途
 - ブログ
 - コーポレートサイト
-- プロモサイト
+- プロモーションサイト
 
 **更新頻度が高く無い**サイトによく使われる
 
@@ -116,37 +122,21 @@ class: middle, center, inverse
 class: middle, center
 # 第二部
 
-# 　
-
----
-class: middle, center
-# 第二部
-
 # Berber の紹介
 
 ---
 # Berber 概要
 
-- gulp-plugin のリストを受け取って
-- Static Site Generator を返す
+- **gulp-plugin** のリストを受け取って
+- **Static Site Generator** を返す
 
 ---
 # Berber 概要
 
-- gulp-plugin のリストを受け取って
-- Static Site Generator を返す
+- **gulp-plugin** のリストを受け取って
+- **Static Site Generator** を返す
 
 -> **Static Site Generator Generator**
-
----
-# Berber 概要
-- gulp プラグインの組み合わせで欲しい SSG の**変換**を表現する
-- その変換ルールに基づいて Berber がファイルの**読み書き/監視/その他処理**を自動で行う
-
----
-# Berber 概要
-- gulp プラグインによる変換の過程でプリセットの html / css / js などを挿入することが出来る (gulp プラグインの機能 e.g. gulp-wrap)
-  - 任意にデザインや動きを入れることが可能
 
 ---
 class: center
@@ -168,7 +158,7 @@ class: center
 
 ---
 # Berber 概要
-- 変換ルールに基づいてファイルの監視・サーブも Berber が行う
+- 変換ルールに基づいてファイルの watch・serve も Berber が行う
 
 ---
 class: center
@@ -177,10 +167,13 @@ class: center
 <img src="assets/serve.png" width="650" />
 
 ---
-# Berber 概要 補足
-- なんらかのルールに基づいて **build と watch & serve** が出来れば **SSG** と言って良い
+# Berber 概要
+- gulp プラグインの組み合わせで欲しい SSG の**変換**を表現する
+- 現在 **3000+** 以上の gulp プラグインが[レジストリ](https://gulpjs.com/plugins/) に登録されていて、ありがちな変換はほぼプラグインの組み合わせで実現可能
 
-**gulp プラグインと html / js / css で **SSG** を作ったことになる
+---
+# Berber 概要
+- 変換過程で例えば **gulp-wrap** のような変換をかければ、データを任意の html 表現の中に落とし込むことが可能
 
 ---
 class: middle, center, inverse
@@ -190,16 +183,17 @@ class: middle, center, inverse
 # gulpfile を書く労力 と<br/>Web Site 作成の労力 で<br/>SSG が作れる!
 
 ---
-# Berber 使い方
+# 具体的な使い方
 
 ```
 $ npm i --save berber
 ```
 
+---
+# 具体的な使い方 2
+
 my-ssg.js
 ```
-#!/usr/bin/env node
-
 const berber = require('berber')
 
 berber.name('ツールの名前')
@@ -209,6 +203,8 @@ berber.asset('globパターン')
   .pipe(gulpプラグイン2())
   ...
 ```
+
+- 詳細は [API ドキュメント][berber] 参照
 
 ---
 # Berber 使い方
@@ -245,19 +241,9 @@ $ my-ssg build # 静的サイト生成
 
 ---
 class: middle, center, inverse
-# Demo
-
----
-class: middle, center, inverse
 # 第三部
 
-# 　
-
----
-class: middle, center, inverse
-# 第三部
-
-# Berber 応用
+# Berber 応用編
 
 ---
 class: middle, center, inverse
@@ -266,42 +252,42 @@ class: middle, center, inverse
 ---
 ## 課題1: ドメインモデルのドキュメント
 
-- ドメイン駆動開発を使う時に**ドメインモデル**をきちんとドキュメントすることが大事
-- 既存ツールでもある程度ドキュメントできるが、**いまいちしっくりこない**
-- 過去に Google Spreadsheet や、コンフルでドキュメントしたが、**途中でやめてしまった**
-  - -> ツールとして合っていないことが原因
+- **ドメイン駆動開発**を行う際に**ドメインモデル**をきちんとドキュメントしていくことが大事
+- 既存ツールでもある程度ドキュメントできるが、**[いまいちしっくりこない](https://qiita.com/kt3k/items/5f38267a65ef0e47a5d3)**
+  - -> **専用ドキュメントツール**欲しい
 
 ---
 ## 解決1: domaindoc
 
-- **ドメインモデルの md ドキュメント**から**モデル一覧サイト**を生成する専用 SSG を作成
-- **必要最小限**の入力で、**詳細な見せ方**と**一覧的な見せ方**の両方ができるため、ドキュメントの更新コストが減り、ドキュメントの閲覧性も大幅に上がった
-- 例: [ソース]() / [サイト]()
+- **ドメインモデルの md **から**モデル一覧サイト**を生成する専用 SSG
+- **6 gulp plugin** を使用: gulp-marked, gulp-front-matter, layout1 etc
+- **必要最小限**の入力で、**詳細な見せ方**と**一覧的な見せ方**の両方ができる
 
 ---
-## 課題2: 翻訳データ
+## 課題2: 翻訳抜け漏れチェック
 
-- **とある形式の翻訳データ**を複数のプロダクトで使いまわしているが、多言語まとめて**一覧表示する方法がない**ため、**抜け漏れや不整合**の確認が非常に**煩雑**
+- **JSON 形式の翻訳データ**を複数のプロダクトで使いまわしているが、多言語まとめて**一覧表示する方法がない**ため、**抜け漏れや不整合**の確認が非常に**煩雑**
 
 ---
 ## 解決2: langsheet
 
-- その形式の json を一覧表にする SSG を作成
-- 例: [ソース]() / [サイト]()
+- JSON ソースを**一覧表**にする SSG
+- **2 gulp plugin** を使用: vinyl-accumulate, layout1
+- 例: [JSON ソース]() / [サイト]()
 
 ---
-## 課題3: マークダウンでスライドを作る
+## 課題3: スライドを md で書きたい
 - スライドを **md** で書きたい
 - **docset** というツールでできる
   - **有料なので NG**
 - **Qiita スライドモード**でできる
   - **表示の調整が弱い**
-  - プロジェクターの**解像度が低い**と発表が成り立たないリスクがある -> **NG**
+  - プロジェクターの**解像度が低い**と発表が成り立たないリスクあり -> **NG**
 
 ---
 ## 課題3: マークダウンでスライドを作る
 - **remark.js** というのがあって、html の中に書いた md をスライドにしてくれる.
-- ただし、html の中に、**マークアップ** / **remark.js** / **css** を手で書かないといけない
+- ただし、html の中に、**マークアップ** / **js** / **css** を手で書かないといけない
   - **かなり惜しい**
 - md だけを書いてスライドにしたい
 
@@ -309,27 +295,32 @@ class: middle, center, inverse
 ## 解決3: remarker
 
 - **md ファイル**から**remark.js 設定済み html**を生成する SSG
-- **md** のみを入力として**スライド**が出力できる
+- **2 gulp plugin** を使用: gulp-rename, layout1
 - **このスライドは remarker で出来ています**
 
 ---
 # Berber が解決する問題まとめ
 
+- **いい感じにドキュメント**したい
+  - (domaindoc)
 - **ファイル / データを見える化**したい
   - (langsheet)
-- **仕様を見える化**したい
-  - (domaindoc)
-- **ミニマルな入力で実用的ページ**を生成したい
+- **煩雑な記述**を**ミニマル化**したい
   - (remarker)
 
 ---
 ## 今後 Berber が使えそうと思う領域
 
 - **ゲーム制作用データ**のビジュアライズ
-  - ゲーム制作は**特殊**かつ**見える化需要**が高いデータが多い
-- **プロモサイト/コーポレートサイト生成**
-  - ビルドを個別で組むのではなく型化してしまう
-  - マークアッパーが gulpfile をメンテしなくて良くなる
+  - ゲーム制作は**特殊なデータ**だらけ
+  - **エディタ制作**に多大な工数がしばしば必要になる
+  - 入力をテキストデータにすれば **SSG をエディタ代わり**にできる
+
+---
+## 今後 Berber が使えそうと思う領域
+- **ソースコードメタ情報の可視化**
+  - **gulp-babylon** で AST にしてから興味のある情報だけを抜き出す
+  - 例えば、**TODO コメントを一覧化**して残タスクが可視化されるツールとか
 
 ---
 class: middle, center, inverse
@@ -356,3 +347,6 @@ class: middle, center, inverse
 ---
 class: middle, center
 ## ご静聴ありがとうございました 🙇
+
+[middleman]: https://middlemanapp.com/
+[berber]: https://github.com/kt3k/berber
