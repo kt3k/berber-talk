@@ -6,8 +6,12 @@ class: middle, center, inverse
 ---
 # @kt3k
 
+# ひのさわ よしや
+
+- **JavaScript 専門フリーランス** 3年目
 - twitter.com/kt3k
 - github.com/kt3k
+
 
 ---
 class: middle, center
