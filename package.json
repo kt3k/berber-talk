@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/kt3k/berber-talk#readme",
   "devDependencies": {
-    "remarker": "^1.3.0"
+    "remarker": "^1.8.0"
   }
 }
